@@ -64,12 +64,14 @@ public class GamePanel extends JPanel implements ActionListener {
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 } else {
                     g.setColor(new Color(45, 180, 0));
+                    // Gives the snake a random color (Pride)
+                    g.setColor(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
                 g.setColor(Color.RED);
-                g.setFont(new Font("Ink Free",Font.BOLD, 40));
+                g.setFont(new Font("Ink Free", Font.BOLD, 40));
                 FontMetrics metrics = getFontMetrics(g.getFont());
-                g.drawString("Score: " +applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: " +applesEaten))/2, g.getFont().getSize());
+                g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: " + applesEaten)) / 2, g.getFont().getSize());
             }
         } else {
             gameOver(g);
@@ -143,14 +145,14 @@ public class GamePanel extends JPanel implements ActionListener {
     public void gameOver(Graphics g) {
         // Display the score
         g.setColor(Color.RED);
-        g.setFont(new Font("Ink Free",Font.BOLD, 40));
+        g.setFont(new Font("Ink Free", Font.BOLD, 40));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
-        g.drawString("Score: " +applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: " +applesEaten))/2, g.getFont().getSize());
+        g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: " + applesEaten)) / 2, g.getFont().getSize());
         // Game Over Text
         g.setColor(Color.RED);
-        g.setFont(new Font("Ink Free",Font.BOLD, 75));
+        g.setFont(new Font("Ink Free", Font.BOLD, 75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
-        g.drawString("GAME OVER", (SCREEN_WIDTH - metrics2.stringWidth("GAME OVER"))/2, SCREEN_HEIGHT/2);
+        g.drawString("GAME OVER", (SCREEN_WIDTH - metrics2.stringWidth("GAME OVER")) / 2, SCREEN_HEIGHT / 2);
     }
 
     @Override
